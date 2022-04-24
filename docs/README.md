@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /images/file.png
+heroImage: https://v2.vuepress.vuejs.org/images/hero.png
 heroText: 技术文档
 tagline: FontEnd Concept
 actions:

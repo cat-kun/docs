@@ -11,15 +11,18 @@ module.exports = {
   // 主题和它的配置
   theme: '@vuepress/theme-default',
   themeConfig: {
-    logo: '',
+    logo: 'https://v2.vuepress.vuejs.org/images/hero.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: '青龙', link: '/qinglong/' },
-      { text: 'External', link: 'https://google.com' },
+      // { text: 'External', link: 'https://google.com' },
     ],
     sidebar: router,
-    // contributors: false,
+    contributors: false,
     // contributorsText: 'Contributors'
   },
-  // base: '/<vuePress>/'
+  markdown: {
+    plugins: ['task-lists']
+  },
+  base: '/<vuePress>/'
 }
