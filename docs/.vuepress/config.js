@@ -18,7 +18,7 @@ module.exports = {
   // 主题和它的配置
   theme: '@vuepress/theme-default',
   themeConfig: {
-    logo: '/img/hero.png',
+    logo: '/images/hero.png',
     navbar: [
       { text: '首页', link: '/' },
       {

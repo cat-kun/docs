@@ -1,12 +1,12 @@
 ---
 home: true
 lang: zh-CN
-heroImage: /img/hero.png
+heroImage: /images/hero.png
 heroText: 技术文档
 tagline: FontEnd Concept
 actions:
 - text: 快速上手 →
-  link: /qinglong/
+  link: /qinglong/Nark
   type: secondary
 # features:
 # - title: 简洁至上
