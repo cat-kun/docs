@@ -57,3 +57,4 @@ jobs:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           # 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
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: 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
