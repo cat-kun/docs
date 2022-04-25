@@ -14,7 +14,7 @@ module.exports = {
   base: '/docs/',
   // lang: 'zh-CN',
   title: '技术文档',
-  description: '这是我的第一个 VuePress 站点',
+  description: 'GitHub在线文档',
   // 主题和它的配置
   theme: '@vuepress/theme-default',
   themeConfig: {
@@ -78,9 +78,7 @@ module.exports = {
     editLinks: true,
   },
   markdown: {
-    plugins: [
-      'task-lists',
-    ]
+    plugins: ['task-lists']
   },
   plugins: [
     '@vuepress/plugin-search',
