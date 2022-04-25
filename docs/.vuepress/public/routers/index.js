@@ -62,10 +62,10 @@ module.exports = {
           text: 'Nark部署',
           link: '/qinglong/Nark',
         },
-        // {
-        //   text: 'kingfeng部署',
-        //   link: '/qinglong/kingfeng',
-        // }
+        {
+          text: 'kingfeng部署',
+          link: '/qinglong/kingfeng',
+        }
       ]
     }
   ]

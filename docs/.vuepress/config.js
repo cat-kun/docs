@@ -32,10 +32,10 @@ module.exports = {
             text: 'Nark部署',
             link: '/qinglong/Nark'
           },
-          // {
-          //   text: 'KingFeng部署',
-          //   link: '/qinglong/kingfeng'
-          // }
+          {
+            text: 'KingFeng部署',
+            link: '/qinglong/kingfeng'
+          }
         ],
       },
       { text: 'JD登录地址', link: 'http://ck.dramarie.com/' },

@@ -117,14 +117,35 @@ sudo docker run   --name nark -p 5701:80  -d  -v  "$(pwd)"/Config:/app/Config \
 </CodeGroup>
 
 ::: tip 
-配置文件下载地址：[Config.json](https://t.me/c/1648382151/594)
 
-nark与授权中心交互必须知道ip。启动的时候会注册ip，如果你挂了代理，记得给n.nnnolanark.xyz设置直连 更换ip重启nark即可 
-:::
+配置文件下载地址:point_right:：[Config.json](https://t.me/c/1648382151/594)
+
+授权文件请到[tg群](https://t.me/NolanNarkNotice)获取，不定时开放
+
+~~nark与授权中心交互必须知道ip。启动的时候会注册ip，如果你挂了代理，记得给n.nnnolanark.xyz设置直连 更换ip重启nark即可:point_down:~~
 
 ```bash
 docker exec -it nark echo "104.21.62.86 n.nnnolanark.xyz">>/etc/hosts
 ```
+
+:::
+
+
+
+::: details 点击查看配置目录结构
+
+```
+├─ Ark
+│  ├─ Config
+│  │  └─ Config.json
+│  │  └─ Nark.lic
+│  └─ logfile
+│
+
+
+```
+
+:::
 #### 更新
 
 ```bash
@@ -136,11 +157,11 @@ docker run --rm     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/
 :::
 
 ::: tip
-对接`wxpusher`的，需要在应用的`事件回调地址`配置：`nark容器ip:端口号/api/wxpusher`
+对接[wxpusher](https://wxpusher.zjiecode.com/)的，需要在应用的[事件回调地址](https://wxpusher.zjiecode.com/admin/main/app/appInfo)配置：`nark容器ip:端口号/api/wxpusher`
 :::
 
 ### 群晖 
-* [docker仓库](https://hub.docker.com/r/nolanhzy/ark)
+* [docker仓库](https://hub.docker.com/r/nolanhzy/ark) 未完待续
 ```bash
 docker pull nolanhzy/nark
 ```
