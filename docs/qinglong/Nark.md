@@ -1,6 +1,4 @@
 ## Nark短信登录
-
-
 ### 云服务器部署如下
 
 <CodeGroup>
@@ -53,7 +51,9 @@ sudo docker run   --name nark -p 5701:80  -d  -v  "$(pwd)"/Config:/app/Config \
   </CodeGroupItem>
 </CodeGroup>
 
-##### nark与授权中心交互必须知道ip。启动的时候会注册ip，如果你挂了代理，记得给n.nnnolanark.xyz设置直连 更换ip重启nark即可
+::: tip 
+nark与授权中心交互必须知道ip。启动的时候会注册ip，如果你挂了代理，记得给n.nnnolanark.xyz设置直连 更换ip重启nark即可 
+:::
 
 ```bash
 docker exec -it nark echo "104.21.62.86 n.nnnolanark.xyz">>/etc/hosts

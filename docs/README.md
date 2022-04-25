@@ -1,11 +1,12 @@
 ---
 home: true
-heroImage: https://v2.vuepress.vuejs.org/images/hero.png
+lang: zh-CN
+heroImage: /img/hero.png
 heroText: 技术文档
 tagline: FontEnd Concept
 actions:
 - text: 快速上手 →
-  link: /qinglong/README.md
+  link: /qinglong/
   type: secondary
 # features:
 # - title: 简洁至上
