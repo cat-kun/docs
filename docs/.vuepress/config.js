@@ -24,18 +24,18 @@ module.exports = {
       {
         text: '青龙相关',
         children: [
-          {
-            text: '青龙部署',
-            link: '/qinglong/README.md'
-          },
+          // {
+          //   text: '青龙部署',
+          //   link: '/qinglong/README.md'
+          // },
           {
             text: 'Nark部署',
             link: '/qinglong/Nark'
           },
-          {
-            text: 'KingFeng部署',
-            link: '/qinglong/kingfeng'
-          }
+          // {
+          //   text: 'KingFeng部署',
+          //   link: '/qinglong/kingfeng'
+          // }
         ],
       },
       { text: 'JD登录地址', link: 'http://ck.dramarie.com/' },
