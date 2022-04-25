@@ -165,7 +165,7 @@ docker run --rm     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/
 :::
 
 ### 群晖 
-* [docker仓库](https://hub.docker.com/r/nolanhzy/ark) 未完待续
+* [docker仓库](https://hub.docker.com/r/nolanhzy/nark) 未完待续
 ```bash
 docker pull nolanhzy/nark
 ```
