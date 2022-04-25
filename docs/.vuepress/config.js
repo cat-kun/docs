@@ -1,4 +1,6 @@
 const router = require('./public/routers/index')
+const { mdEnhance } = require("vuepress-plugin-md-enhance");
+console.log('mdEnhance', mdEnhance)
 
 module.exports = {
   head: [
@@ -78,9 +80,20 @@ module.exports = {
     editLinks: true,
   },
   markdown: {
-    plugins: ['task-lists']
+    // plugins: ['task-lists'],
+    extendMarkdown: md => {
+      // 将段落中的 '\n' 转换为 <br>
+      md.set({ breaks: true })
+      // 使用更多的 markdown-it 插件!
+      // md.use(require('task-lists'))
+      // md.use(require('markdown-it-task-lists'), { enabled: true })
+    }
   },
   plugins: [
     '@vuepress/plugin-search',
+    mdEnhance({
+      // 启用任务列表
+      tasklist: true,
+    }),
   ]
 }

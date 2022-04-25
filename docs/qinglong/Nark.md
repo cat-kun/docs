@@ -1,5 +1,9 @@
 ## Nark短信登录
 
+
+- [x] 短信登录
+- [x] 只支持2.11以下
+
 ### 云服务器部署如下
 
 <CodeGroup>
@@ -165,6 +169,3 @@ docker run --rm     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/
 ```bash
 docker pull nolanhzy/nark
 ```
-
-- [x] 短信登录
-- [x] 只支持2.11以下
