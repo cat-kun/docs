@@ -50,7 +50,7 @@ sudo docker run   --name nark -p 5701:80  -d  -v  "$(pwd)"/Config:/app/Config \
 ```
 
   </CodeGroupItem>
-  <CodeGroupItem title="Config配置">
+  <CodeGroupItem title="Config.json">
   
 ```bash
 {
@@ -131,8 +131,16 @@ docker exec -it nark echo "104.21.62.86 n.nnnolanark.xyz">>/etc/hosts
 docker run --rm     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/watchtower -c     --run-once     nark
 ```
 
+::: warning
+修改了`Config.json`或者更新了容器，都需要重启`docker restart nark`
+:::
+
+::: tip
+对接`wxpusher`的，需要在应用的`事件回调地址`配置：`nark容器ip:端口号/api/wxpusher`
+:::
+
 ### 群晖 
-* [docker仓库](https://hub.docker.com/r/nolanhzy/nark)
+* [docker仓库](https://hub.docker.com/r/nolanhzy/ark)
 ```bash
 docker pull nolanhzy/nark
 ```
