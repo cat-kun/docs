@@ -2,7 +2,8 @@ const router = require('./public/routers/index')
 
 module.exports = {
   head: [
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
+    ['link', { rel: 'icon', href: '/img/hero.png' }], // icon图标
   ],
   // 站点配置
   locales: {
@@ -69,7 +70,7 @@ module.exports = {
         toggleSidebar: '切换侧边栏',
       }
     },
-    repo: 'cat-kun/vuePress',
+    repo: 'cat-kun/docs',
     // 假如文档不是放在仓库的根目录下：
     docsDir: 'docs',
     docsBranch: 'master',

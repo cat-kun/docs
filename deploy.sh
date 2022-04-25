@@ -21,6 +21,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:cat-kun/cat-kun.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:cat-kun/vuePress.git master:gh-pages
+git push -f git@github.com:cat-kun/docs.git master:gh-pages
 
 cd -
