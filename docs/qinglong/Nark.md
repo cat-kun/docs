@@ -4,7 +4,7 @@
 - [x] 短信登录
 - [x] 只支持2.11以下
 
-### 云服务器部署如下
+### 云服务器部署
 
 <CodeGroup>
   <CodeGroupItem title="AMD" active>
@@ -146,10 +146,12 @@ docker exec -it nark echo "104.21.62.86 n.nnnolanark.xyz">>/etc/hosts
 │  └─ logfile
 │
 
-
 ```
 
 :::
+
+[tg群大佬演示视频](https://t.me/c/1648382151/6674)
+
 #### 更新
 
 ```bash
@@ -157,7 +159,12 @@ docker run --rm     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/
 ```
 
 ::: warning
-修改了`Config.json`或者更新了容器，都需要重启`docker restart nark`
+修改了`Config.json`或者更新了容器，都需要重启docker
+
+```bash
+docker restart nark
+```
+
 :::
 
 ::: tip

@@ -54,10 +54,10 @@ module.exports = {
       //   '/qinglong/Nark.md',
       // ],
       children: [
-        // {
-        //   text: '青龙部署',
-        //   link: '/qinglong/',
-        // },
+        {
+          text: '青龙部署',
+          link: '/qinglong/',
+        },
         {
           text: 'Nark部署',
           link: '/qinglong/Nark',

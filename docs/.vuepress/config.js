@@ -26,10 +26,10 @@ module.exports = {
       {
         text: '青龙相关',
         children: [
-          // {
-          //   text: '青龙部署',
-          //   link: '/qinglong/README.md'
-          // },
+          {
+            text: '青龙部署',
+            link: '/qinglong/README.md'
+          },
           {
             text: 'Nark部署',
             link: '/qinglong/Nark'
@@ -91,6 +91,8 @@ module.exports = {
   },
   plugins: [
     '@vuepress/plugin-search',
+    'vuepress-plugin-smooth-scroll',
+    '@mr-hope/vuepress-plugin-smooth-scroll',
     mdEnhance({
       // 启用任务列表
       tasklist: true,
