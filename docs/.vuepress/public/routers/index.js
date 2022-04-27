@@ -42,10 +42,6 @@
 
 module.exports = {
   '/qinglong/': [
-    // {
-    //   text: 'VuePress Reference',
-    //   children: ['/reference/cli.md', '/reference/config.md'],
-    // },
     {
       text: '青龙',
       collapsible: true,
@@ -67,6 +63,13 @@ module.exports = {
           link: '/qinglong/kingfeng',
         }
       ]
+    }
+  ],
+  '/qrcode/': [
+    {
+      text: '健康码',
+      collapsible: true,
+      children: ['/qrcode/README.md']
     }
   ]
 }

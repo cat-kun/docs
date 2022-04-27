@@ -111,7 +111,7 @@ sudo docker run   --name nark -p 5701:80  -d  -v  "$(pwd)"/Config:/app/Config \
       // WSCK最大容量
       "QL_WSCK": 40,
       // WXPUSHER的应用token，不推送留空
-      "APP_TOKEN": ""
+      "WP_APP_TOKEN": ""
     }
   ]
 }
