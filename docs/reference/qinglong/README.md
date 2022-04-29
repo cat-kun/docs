@@ -22,7 +22,7 @@ wget -q https://raw.githubusercontents.com/shufflewzc/VIP/main/Scripts/sh/ql.sh 
 
 > 已有青龙保存CK办法，下载env.sh到本地后再进行安装,安装完成后在环境变量一次性复制添加，打开自动拆分即可。
 
-![](../.vuepress/public/images/qinglong01.png)
+![](../../.vuepress/public/images/qinglong01.png)
 
 ### 使用说明
 

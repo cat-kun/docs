@@ -1,1 +1,0 @@
-const e={key:"v-097972e1",path:"/qinglong/kingfeng.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"KingFeng",slug:"kingfeng",children:[]},{level:2,title:"sss",slug:"sss",children:[{level:3,title:"34343",slug:"_34343",children:[]}]}],git:{updatedTime:1650857532e3},filePathRelative:"qinglong/kingfeng.md"};export{e as data};

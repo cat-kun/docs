@@ -41,32 +41,48 @@
 // ];
 
 module.exports = {
-  '/qinglong/': [
-    // {
-    //   text: 'VuePress Reference',
-    //   children: ['/reference/cli.md', '/reference/config.md'],
-    // },
+  '/reference/': [
     {
       text: '青龙',
       collapsible: true,
-      // children: [
-      //   '/qinglong/README.md', 
-      //   '/qinglong/Nark.md',
-      // ],
       children: [
-        {
-          text: '青龙部署',
-          link: '/qinglong/',
-        },
-        {
-          text: 'Nark部署',
-          link: '/qinglong/Nark',
-        },
-        {
-          text: 'kingfeng部署',
-          link: '/qinglong/kingfeng',
-        }
-      ]
+        '/reference/qinglong/README.md', 
+        '/reference/qinglong/Nark.md',
+        '/reference/qinglong/kingfeng.md',
+      ],
+      // children: [
+      //   {
+      //     text: '青龙部署',
+      //     link: '/qinglong/',
+      //   },
+      //   {
+      //     text: 'Nark部署',
+      //     link: '/qinglong/Nark',
+      //   },
+      //   {
+      //     text: 'kingfeng部署',
+      //     link: '/qinglong/kingfeng',
+      //   }
+      // ]
+    },
+    {
+      text: '面经',
+      collapsible: true,
+      children: ['/reference/interview/README.md']
     }
-  ]
+  ],
+  // '/qrcode/': [
+  //   {
+  //     text: '健康码',
+  //     collapsible: true,
+  //     children: ['/qrcode/README.md']
+  //   }
+  // ],
+  // '/interview/': [
+  //   {
+  //     text: '面经',
+  //     collapsible: true,
+  //     children: ['/interview/README.md']
+  //   }
+  // ],
 }
