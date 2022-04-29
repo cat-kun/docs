@@ -6,7 +6,7 @@ heroText: 技术文档
 tagline: FontEnd Concept
 actions:
 - text: 快速上手 →
-  link: /qinglong/Nark
+  link: /reference/qinglong/
   type: secondary
 # features:
 # - title: 简洁至上

@@ -1,5 +1,5 @@
+# Nark部署
 ## Nark短信登录
-
 
 - [x] 短信登录
 - [x] 只支持2.11以下
@@ -152,7 +152,7 @@ docker exec -it nark echo "104.21.62.86 n.nnnolanark.xyz">>/etc/hosts
 
 [tg群大佬演示视频](https://t.me/c/1648382151/6674)
 
-#### 更新
+### 更新
 
 ```bash
 docker run --rm     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/watchtower -c     --run-once     nark

@@ -1,5 +1,4 @@
-## 青龙🐉
-
+# 青龙部署
 
 ### 官方教程
 :point_right: [查看Telegram频道](https://t.me/jiao_long/31)

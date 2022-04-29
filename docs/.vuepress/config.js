@@ -28,17 +28,27 @@ module.exports = {
         children: [
           {
             text: '青龙部署',
-            link: '/qinglong/README.md'
+            link: '/reference/qinglong/README.md'
           },
           {
             text: 'Nark部署',
-            link: '/qinglong/Nark'
+            link: '/reference/qinglong/Nark'
           },
           {
             text: 'KingFeng部署',
-            link: '/qinglong/kingfeng'
+            link: '/reference/qinglong/kingfeng'
           }
         ],
+      },
+      {
+        text: '面经',
+        link: '/reference/interview/',
+        // children: [
+        //   {
+        //     text: '青龙部署',
+        //     link: '/interview/README.md'
+        //   },
+        // ],
       },
       { text: 'JD登录地址', link: 'http://ck.dramarie.com/' },
     ],
@@ -49,7 +59,7 @@ module.exports = {
       '/': {
         // page meta
         editLinkText: '在 GitHub 上编辑此页',
-        lastUpdatedText: '上次更新',
+        lastUpdatedText: '更新时间',
         contributorsText: '贡献者',
 
         // custom containers
