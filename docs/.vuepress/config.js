@@ -5,7 +5,7 @@ console.log('mdEnhance', mdEnhance)
 module.exports = {
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
-    ['link', { rel: 'icon', href: '/images/icon.png' }], // icon图标
+    ['link', { rel: 'icon', href: 'https://tva1.sinaimg.cn/large/84295ee1gy1h1qo6wflzfj2068068q3b.jpg' }], // icon图标
   ],
   // 站点配置
   locales: {
