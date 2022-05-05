@@ -41,7 +41,7 @@ module.exports = {
         ],
       },
       {
-        text: '面经',
+        text: 'Web前端',
         link: '/reference/interview/',
         // children: [
         //   {

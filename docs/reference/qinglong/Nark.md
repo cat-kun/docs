@@ -172,7 +172,47 @@ docker restart nark
 :::
 
 ### 群晖 
-* [docker仓库](https://hub.docker.com/r/nolanhzy/nark) 未完待续
+* [docker仓库](https://hub.docker.com/r/nolanhzy/nark)
+* [原文链接](https://t.me/update_help/245)
+
 ```bash
-docker pull nolanhzy/nark
+# 1、安装 Git Server 套件并部署，自行百度，不详述；
+
+# 2、定位到共享文件夹 docker 下。查看其详情，获取绝对路径，比如
+/volume1/docker；
+
+# 3、拉取源码
+git clone https://github.com/NNNNolan/Ark.git /volume1/docker/Ark
+
+# 4、创建配置文件夹并定位到该文件夹；
+mkdir -p  Config && cd Config
+
+# 5、下载原始配置模板配置。[点击此处](https://t.me/update_help/246)前往文件及教程；
+
+# 6、定位到nuolanjdc文件夹，创建 chromium 驱动文件夹
+cd /volume1/docker/Ark && mkdir -p  .local-chromium/Linux-884014 && cd .local-chromium/Linux-884014
+
+# 7、下载 chromium 驱动包，解压后将 chrome-linux 文件夹整体上传至 /volume1/docker/Ark/.local-chromium/Linux-884014
+chromium 驱动包下载地址：
+https://mirrors.huaweicloud.com/chromium-browser-snapshots/Linux_x64/884014/chrome-linux.zip
+
+# 8、拉取 Docker 注册表并创建、启动容器；
+docker run -dit \
+--name ark \
+-p 5701:80 \
+-p 5100:5000 \
+-v /volume1/docker/Ark:/app/Ark \
+-v /etc/localtime:/etc/localtime:ro \
+--privileged=true \
+nolanhzy/ark:latest
+
+# 9、修正时区：
+# 9.1 进入容器
+docker exec -it ark bash
+# 9.2 修改时间
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+# 9.3 输入date 查看时区对不对 群辉的docker 日志时间有毛病 我们就不用管
+docker log date
+
+# 10、之后就可以通过“群晖的地址:5701”访问 nolan Ark 了。据说第一次会卡一下，忍一下后面就好了。
 ```

@@ -106,7 +106,7 @@ User 接口为 {
   
 ### Vue
 
-* vue.sync()这个方法是干嘛用的
+* vue.sync()这个方法是干嘛用的？
 
 ::: details 点击展开详解
 
@@ -114,4 +114,4 @@ User 接口为 {
 
 :::
 
-* $monut的原理
+* Vue.$mount的原理
