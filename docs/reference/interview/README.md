@@ -1,8 +1,8 @@
 # 2022面试题
 
-### JavaScript
+## JavaScript
 
-* `??` 和 `||` 区别
+### `??` 和 `||` 区别
 
 ::: details 点击展开详解
 
@@ -37,10 +37,46 @@ false || 2		// 2
 
 :::
 
-* `NAN` 和 `number` 区别
+### `NaN` 和 `number` 区别
 
+### JS设计模式
 
-### TypeScript
+  * 工厂模式
+    
+    定义一个用于创建对象的接口，这个接口由子类决定实例化哪一个类。该模式使一个类的实例化延迟到了子类。而子类可以重写接口方法以便创建的时候指定自己的对象类型。
+
+::: details 点击展开详解
+```js
+class Product {
+  constructor(name) {
+    this.name = name
+  }
+  init() {
+    console.log('init')
+  }
+  fun() {
+    console.log('fun')
+  }
+}
+
+class Factory {
+  create(name) {
+    return new Product(name)
+  }
+}
+
+// use
+let factory = new Factory()
+let p = factory.create('p1')
+p.init()
+p.fun()
+
+```
+:::
+
+  * 单例模式
+  * 原型模式
+## TypeScript
 
 * `types` 和 `interface` 有什么区别？
 
@@ -104,7 +140,7 @@ User 接口为 {
 一般来说，如果不清楚什么时候用interface/type，能用 interface 实现，就用 interface, 如果不能就用 type
 :::
   
-### Vue
+## Vue
 
 * vue.sync()这个方法是干嘛用的？
 
