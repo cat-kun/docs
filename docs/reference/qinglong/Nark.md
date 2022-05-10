@@ -10,7 +10,7 @@
   <CodeGroupItem title="AMD" active>
 
 ```bash
-# 
+# 新建Ark目录
 mkdir /root/Ark 
 
 cd /root/Ark && mkdir -p Config
@@ -51,6 +51,19 @@ cd /root/Ark
 sudo docker run   --name nark -p 5701:80  -d  -v  "$(pwd)"/Config:/app/Config \
 -v  "$(pwd)"/logfile:/app/logfile  \
 -it --privileged=true  nolanhzy/nark:arm
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="Windows电脑">
+
+```bash
+# 比如目录是放在D盘下
+docker run --name nark -p 5701:80 -d -v D:/Ark/Config:/app/Config -v D:/Ark/logfile:/app/logfile -it --privileged=true nolanhzy/nark:latest
+
+# 如果青龙也是搭建在本机（windows）下，那么
+
+# 获取所有容器名称及其IP地址
+docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
 ```
 
   </CodeGroupItem>

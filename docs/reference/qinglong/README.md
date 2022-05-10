@@ -38,3 +38,28 @@ wget -q https://raw.githubusercontents.com/shufflewzc/VIP/main/Scripts/sh/ql.sh 
 docker exec -it qinglong bash -c "$(curl -fsSL https://git.metauniverse-cn.com/https://github.com/shufflewzc/VIP/blob/main/Scripts/sh/1customCDN.sh)"
 ```
 
+### 本地电脑
+
+<CodeGroup>
+<CodeGroupItem title="Mac" active>
+
+  ```bash
+  # 假设目录是在D盘下
+  mkdir ql
+
+  # 在ql目录下新建 config log db repo raw scripts
+  cd ql && mkdir config log db repo raw scripts
+
+  docker run -dit -v d:/ql/config:/ql/config -v d:/ql/log:/ql/log -v d:/ql/db:/ql/db -p 5700:5700 --name qinglong --hostname qinglong --restart always whyour/qinglong:latest
+  ```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="Windows">
+
+  ```bash
+  # 假设目录是在D盘下
+  docker run -dit -v d:/ql/config:/ql/config -v d:/ql/log:/ql/log -v d:/ql/db:/ql/db -p 5700:5700 --name qinglong --hostname qinglong --restart always whyour/qinglong:latest
+  ```
+
+  </CodeGroupItem>
+</CodeGroup>
