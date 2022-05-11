@@ -112,6 +112,8 @@ p.fun();
 
 ### 扩展运算符是浅拷贝还是深拷贝，并且说说深拷贝有哪些方法
 
+[参考链接](https://juejin.cn/post/6844904042322198541)
+
 - `扩展运算符`是浅拷贝
 - 深拷贝方法：
   - JSON.parse(JSON.stringify()) <strong style="color: red">有弊端 复杂的数据类型会有问题 对象里面如果形成闭环 会报错</strong>
