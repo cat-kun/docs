@@ -1,4 +1,4 @@
-# 2022面试题
+# 2022 面试题
 
 ## JavaScript
 
@@ -7,166 +7,319 @@
 ::: details 点击展开详解
 
 ```js
-值1 ?? 值2
-值1 || 值2
+值1 ?? 值2;
+值1 || 值2;
 ```
-使用 ?? 时，只有当值1为 `null` 或 `undefined` 时才返回值2；
 
-使用 || 时，值1会转换为布尔值判断，为 `true` 返回值1，`false` 返回值2
+使用 ?? 时，只有当值 1 为 `null` 或 `undefined` 时才返回值 2；
+
+使用 || 时，值 1 会转换为布尔值判断，为 `true` 返回值 1，`false` 返回值 2
 
 例如：
 
 ```js
 // ??
-undefined ?? 2	// 2
-null ?? 2		// 2
-0 ?? 2			// 0
-"" ?? 2			// ""
-true ?? 2		// true
-false ?? 2		// false
+undefined ?? 2; // 2
+null ?? 2; // 2
+0 ?? 2; // 0
+'' ?? 2; // ""
+true ?? 2; // true
+false ?? 2; // false
 
 // ||
-undefined || 2	// 2
-null || 2		// 2
-0 || 2			// 2
-"" || 2			// 2
-true || 2		// true
-false || 2		// 2
-
+undefined || 2; // 2
+null || 2; // 2
+0 || 2; // 2
+'' || 2; // 2
+true || 2; // true
+false || 2; // 2
 ```
 
 :::
 
 ### `NaN` 和 `number` 区别
 
-### JS设计模式
+### JS 设计模式
 
-  * 工厂模式
-    
-    定义一个用于创建对象的接口，这个接口由子类决定实例化哪一个类。该模式使一个类的实例化延迟到了子类。而子类可以重写接口方法以便创建的时候指定自己的对象类型。
+- 工厂模式
+
+  定义一个用于创建对象的接口，这个接口由子类决定实例化哪一个类。该模式使一个类的实例化延迟到了子类。而子类可以重写接口方法以便创建的时候指定自己的对象类型。
 
 ::: details 点击展开详解
+
 ```js
 class Product {
   constructor(name) {
-    this.name = name
+    this.name = name;
   }
   init() {
-    console.log('init')
+    console.log('init');
   }
   fun() {
-    console.log('fun')
+    console.log('fun');
   }
 }
 
 class Factory {
   create(name) {
-    return new Product(name)
+    return new Product(name);
   }
 }
 
 // use
-let factory = new Factory()
-let p = factory.create('p1')
-p.init()
-p.fun()
-
+let factory = new Factory();
+let p = factory.create('p1');
+p.init();
+p.fun();
 ```
+
 :::
 
-  * 单例模式
-  * 原型模式
+- 单例模式
+- 原型模式
 
 ## 爱范儿面试
+
 ### 浏览器原理
-浏览器获取到html文件后，会对文件进行解析，形成DOM树，紧接着解析CSS，生成Style Rules。接着对DOM树和Style Rules合成Render树。接着进入Layout阶段，也就是为每个节点分配一个应出现在屏幕上的坐标。随后调用GPU进行绘制，遍历Render树的节点，并将元素呈现出来。
+
+浏览器获取到 html 文件后，会对文件进行解析，形成 DOM 树，紧接着解析 CSS，生成 Style Rules。接着对 DOM 树和 Style Rules 合成 Render 树。接着进入 Layout 阶段，也就是为每个节点分配一个应出现在屏幕上的坐标。随后调用 GPU 进行绘制，遍历 Render 树的节点，并将元素呈现出来。
 
 ### 原型继承
-* 原型链继承：一个引用类型继承另一个引用类型的属性和方法，使所有需要继承的属性都被定义在实例对象上
+
+- 原型链继承：一个引用类型继承另一个引用类型的属性和方法，使所有需要继承的属性都被定义在实例对象上
 
 ### 讲讲装饰器
 
-### 跨域
+### 讲讲跨域
 
-### ES6常用的有哪些
+跨域是由于浏览器的安全策略，在不同协议 不同端口 不同域名下都会造成跨域问题。解决方案：
 
-### Promise是宏观还是微观，并且说下Promise的作用
+- 后端 cors
+- jsonp
+
+### ES6 常用的有哪些
+
+- let const
+- 箭头函数
+- 扩展运算符
+- 模版字符串
+- Promise
+- async await
+- 解构赋值
+- 数组的 includes() keys() values()方法
+
+### Promise 是宏观还是微观，并且说下 Promise 的作用
 
 ### 扩展运算符是浅拷贝还是深拷贝，并且说说深拷贝有哪些方法
 
-### JS为什么要设计成单线程
+- `扩展运算符`是浅拷贝
+- 深拷贝方法：
+  - JSON.parse(JSON.stringify()) <strong style="color: red">有弊端 复杂的数据类型会有问题 对象里面如果形成闭环 会报错</strong>
+  - Object.assign() <strong style="color: red">部分深拷贝 或者说就是浅拷贝</strong>
+  - 迭代递归方法
 
+::: details 点击展开详解
+JSON.parse(JSON.stringify())
 
-### 数组的forEach和map区别，map和every区别
+```js
+// 测试数据
+var test = { name: 'test' };
+var data = {
+  a: '123',
+  b: 123,
+  c: true,
+  d: [43, 2],
+  e: undefined,
+  f: null,
+  g: function () {
+    console.log('g');
+  },
+  h: new Set([3, 2, null]),
+  i: Symbol('fsd'),
+  j: test,
+  k: new Map([
+    ['name', '张三'],
+    ['title', 'Author'],
+  ]),
+};
 
-### 框架的router和html5 history有什么区别
+JSON.stringify(data);
 
-#### 延伸的问题，哈希router有什么优缺点
+// data这个对象的属性里基本上包含了所有的数据类型，但通过JSON字符串化后，返回的值却有缺失，原因是JSON在执行字符串化的这个过程时，会先进行一个JSON格式化，获得安全的JSON值，因此如果是非安全的JSON值，就会被丢弃掉。其中undefined、function、symbol这三种类型的值就是非安全的（包括该对象的属性循环赋值该对象），所以格式化后，就被过滤掉了，而set、map这种数据格式的对象，也并没有被正确处理，而是处理成了一个空对象。
+
+// 再看一个极端的例子
+// 测试数据
+let data = {
+  name: 'foo',
+  child: null,
+};
+data.child = data;
+// 将这种对象的属性进行循环引用，就形成了一个闭环，执行一下序列化，看看结果
+```
+
+![](https://tva3.sinaimg.cn/large/84295ee1gy1h24et2r5b0j21120j0th2.jpg)
+
+```js
+// 迭代递归解决闭环问题
+function deepCopy(data, hash = new WeakMap()) {
+  if (typeof data !== 'object' || data === null) {
+    throw new TypeError('传入参数不是对象');
+  }
+  // 判断传入的待拷贝对象的引用是否存在于hash中
+  if (hash.has(data)) {
+    return hash.get(data);
+  }
+  let newData = {};
+  const dataKeys = Object.keys(data);
+  dataKeys.forEach((value) => {
+    const currentDataValue = data[value];
+    // 基本数据类型的值和函数直接赋值拷贝
+    if (typeof currentDataValue !== 'object' || currentDataValue === null) {
+      newData[value] = currentDataValue;
+    } else if (Array.isArray(currentDataValue)) {
+      // 实现数组的深拷贝
+      newData[value] = [...currentDataValue];
+    } else if (currentDataValue instanceof Set) {
+      // 实现set数据的深拷贝
+      newData[value] = new Set([...currentDataValue]);
+    } else if (currentDataValue instanceof Map) {
+      // 实现map数据的深拷贝
+      newData[value] = new Map([...currentDataValue]);
+    } else {
+      // 将这个待拷贝对象的引用存于hash中
+      hash.set(data, data);
+      // 普通对象则递归赋值
+      newData[value] = deepCopy(currentDataValue, hash);
+    }
+  });
+  return newData;
+}
+```
+
+:::
+
+### JS 为什么要设计成单线程
+
+- 因为当时的 JS 主要用来与页面做交互，使用场景单一，没有那么大的复杂场景，所以才设计成单线程。
+
+### 数组的 forEach 和 map 区别，map 和 every 区别
+
+- forEach 会修改原来的数组，而 map 会得到一个新的数组并返回，执行速度上 map 更快
+- some 用来判断数组中的元素是否都满足条件，如果满足则返回 true，不会继续迭代
+
+```js
+let arr = [1, 10, 18, 30];
+arr.some((item) => item > 18); // true
+```
+
+- every 用来判断数组中的元素是否都满足条件，如果有一个不满足，则返回 false，不会继续迭代
+
+```js
+let arr = [1, 10, 18, 30];
+arr.every((item) => item > 11); // false
+```
+
+::: tip
+some 和 every 相反
+:::
+
+### 框架的 router 和 html5 history 有什么区别
+
+#### 延伸的问题，哈希 router 有什么优缺点
+
+### const 为什么能改变对象的属性值
+
+```js
+const obj = { a: 1 };
+obj.a = 2;
+console.log(obj); // {a: 2} 讲讲为什么
+```
 
 ### 讲讲堆 栈
 
-### 小程序的Component组件能不能单独成为一个页面
+### 小程序的 Component 组件能不能单独成为一个页面
 
 ### 小程序云函数
 
-### 打包工具用过哪些（延伸出来的问题：webpack 3 4 5区别）
+### 打包工具用过哪些（延伸出来的问题：webpack 3 4 5 区别）
 
-### React用过哪个版本（延伸出来的问题：`React16`之后为什么推荐用函数式）
+### React 用过哪个版本（延伸出来的问题：`React16`之后为什么推荐用函数式）
 
-### html5中的video标签有什么限制，如果用来做直播的话有什么变化
+### html5 中的 video 标签有什么限制，如果用来做直播的话有什么不同
 
 ### 讲讲作用域
 
-### Taro打包后的源码有没有看过
+### Taro 打包后的源码有没有看过
+
+### 商品详情页怎样优化到 1 秒内展示首屏内容（假设接口已经优化到 0.2 毫秒，不考虑 loading、骨架屏等）
+
+### 说下常见的 http 请求头
+
+- host
+- User-Agent
+- Connection
+- Accept
+- Cookie
+- content-type
+
+### 讲讲状态码
+
+- 1xx
+- 2xx
+- 3xx
+- 4xx
+- 5xx
+
+### 框架里面如何做数据状态管理，父子组件 爷孙组件传递的数据如何管理
+
 ## TypeScript
 
-* `types` 和 `interface` 有什么区别？
+- `types` 和 `interface` 有什么区别？
 
 ::: details 点击展开详解
 
 #### type 可以而 interface 不行
 
-* type 可以声明基本类型别名，联合类型，元组等类型
+- type 可以声明基本类型别名，联合类型，元组等类型
 
 ```ts
 // 基本类型别名
-type Name = string
+type Name = string;
 
 // 联合类型
 interface Dog {
-    wong();
+  wong();
 }
 interface Cat {
-    miao();
+  miao();
 }
 
-type Pet = Dog | Cat
+type Pet = Dog | Cat;
 
 // 具体定义数组每个位置的类型
-type PetList = [Dog, Pet]
-
+type PetList = [Dog, Pet];
 ```
 
-* type 语句中还可以使用 typeof 获取实例的 类型进行赋值
+- type 语句中还可以使用 typeof 获取实例的 类型进行赋值
 
 ```ts
 // 当你想获取一个变量的类型时，使用 typeof
 let div = document.createElement('div');
-type B = typeof div
+type B = typeof div;
 ```
 
 #### interface 可以而 type 不行
 
-* interface 能够声明合并
+- interface 能够声明合并
 
 ```ts
 interface User {
-  name: string
-  age: number
+  name: string;
+  age: number;
 }
 
 interface User {
-  sex: string
+  sex: string;
 }
 
 /*
@@ -179,12 +332,13 @@ User 接口为 {
 ```
 
 #### 总结
-一般来说，如果不清楚什么时候用interface/type，能用 interface 实现，就用 interface, 如果不能就用 type
+
+一般来说，如果不清楚什么时候用 interface/type，能用 interface 实现，就用 interface, 如果不能就用 type
 :::
-  
+
 ## Vue
 
-* vue.sync()这个方法是干嘛用的？
+- vue.sync()这个方法是干嘛用的？
 
 ::: details 点击展开详解
 
@@ -192,4 +346,4 @@ User 接口为 {
 
 :::
 
-* Vue.$mount的原理
+- Vue.$mount 的原理
