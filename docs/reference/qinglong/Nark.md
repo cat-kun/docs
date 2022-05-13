@@ -225,7 +225,7 @@ docker exec -it ark bash
 # 9.2 修改时间
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 # 9.3 输入date 查看时区对不对 群辉的docker 日志时间有毛病 我们就不用管
-docker log date
+docker exec -it nark bash && date # 进入docker容器
 
 # 10、之后就可以通过“群晖的地址:5701”访问 nolan Ark 了。据说第一次会卡一下，忍一下后面就好了。
 ```
