@@ -59,6 +59,9 @@ docker exec -it qinglong bash -c "$(curl -fsSL https://git.metauniverse-cn.com/h
   ```bash
   # 假设目录是在D盘下
   docker run -dit -v d:/ql/config:/ql/config -v d:/ql/log:/ql/log -v d:/ql/db:/ql/db -p 5700:5700 --name qinglong --hostname qinglong --restart always whyour/qinglong:latest
+
+  # 多容器
+  docker run -dit -v d:/bh/config:/ql/config -v d:/bh/log:/ql/log -v d:/bh/db:/ql/db -p 6700:5700 --name baihu --hostname baihu --restart always whyour/qinglong:2.10.13
   ```
 
   </CodeGroupItem>
