@@ -360,3 +360,17 @@ User 接口为 {
 :::
 
 - Vue.$mount 的原理
+
+## React
+
+* React的 hooks有了解么， 请说下 useState, useCallback的作用
+
+* useContent的作用
+
+* 一个页面有多个state，太混乱，你要怎么整合
+
+* Vue的计算属性怎么在React中实现
+
+* React的memo的用法
+
+* 一个仓库有个多端的项目，你要怎么进行区分编译
