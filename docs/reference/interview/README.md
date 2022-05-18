@@ -250,7 +250,8 @@ console.log(obj); // {a: 2} 讲讲为什么
 ### 打包工具用过哪些（延伸出来的问题：webpack 3 4 5 区别）
 
 ### React 用过哪个版本（延伸出来的问题：`React16`之后为什么推荐用函数式）
-
+因为钩子更简洁，代码量少，用起来比较"轻"，而类比较"重"。而且，钩子是函数，更符合 React 函数式的本质。
+<!-- 函数式组件的最大的作用就是可以让你在不编写class的情况下使用state以及其他的 React 特性。 -->
 ### html5 中的 video 标签有什么限制，如果用来做直播的话有什么不同
 
 ### 讲讲作用域
@@ -363,7 +364,22 @@ User 接口为 {
 
 ## React
 
-* React的 hooks有了解么， 请说下 useState, useCallback的作用
+* React生命周期
+  * 挂载卸载过程
+    * constructor()
+    * componentWillMount()
+    * componentDidMount()
+    * componentWillUnmount()
+  * 更新过程
+    * componentWillReceiveProps(nextProps)
+    * shouldComponentUpdate(nextProps, nextState)
+    * componentWillUpdate(nextProps, nextState)
+    * componentDidUpdate(prevProps, prevState)
+    * render()
+
+* React的 hooks有了解么，请说下 useState, useCallback的作用
+  * Hooks的最大的作用就是可以让你在不编写class的情况下使用state以及其他的 React 特性。
+  * useState 的功能就是让你在函数式组件中使用 state
 
 * useContent的作用
 
