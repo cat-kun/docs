@@ -67,3 +67,47 @@ docker exec -it qinglong bash -c "$(curl -fsSL https://git.metauniverse-cn.com/h
 
   </CodeGroupItem>
 </CodeGroup>
+
+### 解决青龙白屏问题
+<CodeGroup>
+  <CodeGroupItem active title="一键脚本">
+
+```bash
+# 进入青龙容器 
+docker exec -it qinglong bash
+# 执行一键脚本
+bash <(curl -ls https://gitee.com/suiyuehq/ziyong/raw/master/ql_cdn/v2.10.13/bpxf.sh)
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="手动">
+
+```bash
+# 1. 登陆linux 
+# 2. 进入青龙容器 
+docker exec -it qinglong bash
+# 3. 备份原来的index.html文件防止改错了不可用 
+cp dist/index.html dist/index.html.bak
+# 4. 替换cdn
+sed -i "s/cdn.jsdelivr.net/cdn.ravi.cool/g" /ql/dist/index.html
+# 替换两个不一样的文件名
+sed -i "s/darkreader.min.js/darkreader.js/g" /ql/dist/index.html
+sed -i "s/codemirror.min.js/codemirror.js/g" /ql/dist/index.html
+# 5. 登陆青龙面板查看是否解决
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+### 解决青龙黑ip
+
+```bash
+## 青龙代理
+ALL_PROXY="你的Socket5代理或者http代理"
+export ALL_PROXY=$ALL_PROXY
+echo '当前代理:' $ALL_PROXY
+# 日志输出ip
+echo '👇查询公网IP👇'
+curl --silent --location --request GET 'https://ifconfig.me/'
+echo -e '\n'
+```
