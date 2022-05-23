@@ -89,6 +89,8 @@ docker exec -it qinglong bash
 # 3. 备份原来的index.html文件防止改错了不可用 
 cp dist/index.html dist/index.html.bak
 # 4. 替换cdn
+# 语法格式
+sed -i "s/要查找的文本/替换后的文本/g" `grep -rl "要查找的文本" ./`
 sed -i "s/cdn.jsdelivr.net/cdn.ravi.cool/g" /ql/dist/index.html
 # 替换两个不一样的文件名
 sed -i "s/darkreader.min.js/darkreader.js/g" /ql/dist/index.html
