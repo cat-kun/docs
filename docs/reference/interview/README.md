@@ -381,7 +381,7 @@ User 接口为 {
   * Hooks的最大的作用就是可以让你在不编写class的情况下使用state以及其他的 React 特性。
   * useState 的功能就是让你在函数式组件中使用 state
   * useEffect()的作用就是指定一个副效应函数，组件每渲染一次，该函数就自动执行一次。组件首次在网页 DOM 加载后，副效应函数也会执行。
-  * useContext() 共享状态钩子
+  * useContext() 共享状态钩子，如果需要在组件之间共享状态，可以使用useContext()
 
 * useContent的作用
 
@@ -392,3 +392,4 @@ User 接口为 {
 * React的memo的用法
 
 * 一个仓库有个多端的项目，你要怎么进行区分编译
+

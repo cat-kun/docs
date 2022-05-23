@@ -108,6 +108,7 @@ export ALL_PROXY=$ALL_PROXY
 echo '当前代理:' $ALL_PROXY
 # 日志输出ip
 echo '👇查询公网IP👇'
-curl --silent --location --request GET 'https://ifconfig.me/'
+# curl --silent --location --request GET 'https://ifconfig.me/'
+curl --silent --location --request GET 'https://cip.cc/'
 echo -e '\n'
 ```
