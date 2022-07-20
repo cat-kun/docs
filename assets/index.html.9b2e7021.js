@@ -1,0 +1,1 @@
+const e={key:"v-03e39169",path:"/reference/router/",title:"\u8DEF\u7531\u5668",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u7EA2\u7C73AC2100",slug:"\u7EA2\u7C73ac2100",children:[{level:3,title:"\u8FDB\u5165SSH",slug:"\u8FDB\u5165ssh",children:[]}]}],git:{updatedTime:1653276111e3},filePathRelative:"reference/router/README.md"};export{e as data};
