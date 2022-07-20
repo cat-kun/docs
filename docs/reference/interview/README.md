@@ -89,13 +89,15 @@ p.fun();
 - 原型链继承：一个引用类型继承另一个引用类型的属性和方法，使所有需要继承的属性都被定义在实例对象上
 
 ### 讲讲装饰器
+
 装饰器是一种与类相关的语法，用来修改类和类方法，可以看作是一种语法糖
+
 ### 讲讲跨域
 
 跨域是由于浏览器的安全策略，在不同协议 不同域名 不同端口下都会造成跨域问题。解决方案：
 
 - 后端 cors
-- jsonp 缺点：只支持get请求，不支持其它http请求
+- jsonp 缺点：只支持 get 请求，不支持其它 http 请求
 
 ::: tip
 都需要后端配合
@@ -250,8 +252,11 @@ console.log(obj); // {a: 2} 讲讲为什么
 ### 打包工具用过哪些（延伸出来的问题：webpack 3 4 5 区别）
 
 ### React 用过哪个版本（延伸出来的问题：`React16`之后为什么推荐用函数式）
+
 因为钩子更简洁，代码量少，用起来比较"轻"，而类比较"重"。而且，钩子是函数，更符合 React 函数式的本质。
+
 <!-- 函数式组件的最大的作用就是可以让你在不编写class的情况下使用state以及其他的 React 特性。 -->
+
 ### html5 中的 video 标签有什么限制，如果用来做直播的话有什么不同
 
 ### 讲讲作用域
@@ -281,11 +286,14 @@ console.log(obj); // {a: 2} 讲讲为什么
 
 ### 缓存
 
-前端缓存主要分为http缓存和浏览器缓存
-#### http缓存
-* `expires`：服务器使用`expires`头来告诉浏览器它使用当前副本，直到指定的时间为止。
-* `cache-control`：它使用max-age指定资源被缓存多久，主要是解决了Expires一个重大的缺陷，就是它设置的是一个固定的时间点，客户端时间和服务端时间可能有误差。所以一般会把两个头都带上，这种缓存称为强缓存
-* `Last-Modified / If-Modified-Since`：Last-Modified是服务器告诉浏览器该资源的最后修改时间，If-Modified-Since是请求头带上的，上次服务器给自己的该资源的最后修改时间。然后服务器拿去对比。若资源的最后修改时间大于If-Modified-Since，说明资源又被改动过，则响应整片资源内容，返回状态码200；若资源的最后修改时间小于或等于If-Modified-Since，说明资源无新修改，则响应HTTP 304，告知浏览器继续使用当前版本。
+前端缓存主要分为 http 缓存和浏览器缓存
+
+#### http 缓存
+
+- `expires`：服务器使用`expires`头来告诉浏览器它使用当前副本，直到指定的时间为止。
+- `cache-control`：它使用 max-age 指定资源被缓存多久，主要是解决了 Expires 一个重大的缺陷，就是它设置的是一个固定的时间点，客户端时间和服务端时间可能有误差。所以一般会把两个头都带上，这种缓存称为强缓存
+- `Last-Modified / If-Modified-Since`：Last-Modified 是服务器告诉浏览器该资源的最后修改时间，If-Modified-Since 是请求头带上的，上次服务器给自己的该资源的最后修改时间。然后服务器拿去对比。若资源的最后修改时间大于 If-Modified-Since，说明资源又被改动过，则响应整片资源内容，返回状态码 200；若资源的最后修改时间小于或等于 If-Modified-Since，说明资源无新修改，则响应 HTTP 304，告知浏览器继续使用当前版本。
+
 ## TypeScript
 
 - `types` 和 `interface` 有什么区别？
@@ -362,32 +370,115 @@ User 接口为 {
 
 - Vue.$mount 的原理
 
+- Vue 组件之间数据传递（父子组件 兄弟组件 爷孙组件如何传递）
+
+::: details 点击展开详解
+
+父传子：
+父组件引用子组件（例如子组件叫 upload），定义一个属性的方式（参数 autoUpload） 传给子组件（属性=值）
+
+```js
+<upload
+	:autoUpload='false'
+>
+</upload>
+```
+
+子组件在 props 声明一个变量，用来接收父组件的参数（可给默认值）
+
+```js
+props: ['autoUpload']
+或者
+props: {
+	autoUpload: {
+    type: Boolean,
+    default: true,
+  }
+}
+```
+
+此时 upload 子组件的 autoUpload 就变成 false 了
+
+子传父：
+
+子组件的 methods 写一个函数，假设它有 index 属性值，需要传给父组件（发布订阅模式，发布一个事件）
+
+```js
+<li @click='handleClick'></li>
+methods: {
+	handleClick() {
+		this.$emit(‘delete’, this.index)
+	}
+}
+
+父组件去监听子组件的事件（delete 事件），如果父组件监听到了子组件向上触发的delete事件的时候，去执行一个函数（比如叫 handleDelete）
+
+<upload
+	@delete=“handleDelete”
+>
+</upload>
+
+methods: {
+	handleDelete(index) {
+		console.log(‘delete’, index)
+	}
+}
+```
+
+:::
+
+- 对 MVVM 开发模式的理解
+
+::: details 点击展开详解
+
+MVVM 分为 Model、View、ViewModel 三者。
+
+- Model：代表数据模型，数据和业务逻辑都在 Model 层中定义；
+- View：代表 UI 视图，负责数据的展示；
+- ViewModel：负责监听 Model 中数据的改变并且控制视图的更新，处理用户交互操作；
+  Model 和 View 并无直接关联，而是通过 ViewModel 来进行联系的，Model 和 ViewModel 之间有着双向数据绑定的联系。因此当 Model 中的数据改变时会触发 View 层的刷新，View 中由于用户交互操作而改变的数据也会在 Model 中同步。
+  这种模式实现了 Model 和 View 的数据自动同步，因此开发者只需要专注对数据的维护操作即可，而不需要自己操作 dom。
+
+:::
+
+- Vue 有哪些指令？
+
+  - v-if、v-for、v-show、v-html、v-text、v-slot、v-on、v-bind 等
+
+- v-if 和 v-show 区别？
+
+  - v-show 仅仅控制元素的显示方式，将 display 属性在 block 和 none 来回切换；而 v-if 会控制这个 DOM 节点的存在与否。当我们需要经常切换某个元素的显示/隐藏时，使用 v-show 会更加节省性能上的开销；当只需要一次显示或隐藏时，使用 v-if 更加合理
+
+- 简述 Vue 的响应式原理
+  - 当一个 Vue 实例创建时，vue 会遍历 data 选项的属性，用 Object.defineProperty 将它们转为 getter/setter 并且在内部追踪相关依赖，在属性被访问和修改时通知变化。 每个组件实例都有相应的 watcher 程序实例，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。
+
 ## React
 
-* React生命周期
-  * 挂载卸载过程
-    * constructor()
-    * componentWillMount()
-    * componentDidMount()
-    * componentWillUnmount()
-  * 更新过程
-    * componentWillReceiveProps(nextProps)
-    * shouldComponentUpdate(nextProps, nextState)
-    * componentWillUpdate(nextProps, nextState)
-    * componentDidUpdate(prevProps, prevState)
-    * render()
+- React 生命周期
 
-* React的 hooks有了解么，请说下 useState, useCallback的作用
-  * Hooks的最大的作用就是可以让你在不编写class的情况下使用state以及其他的 React 特性。
-  * useState 的功能就是让你在函数式组件中使用 state
-  * useEffect()的作用就是指定一个副效应函数，组件每渲染一次，该函数就自动执行一次。组件首次在网页 DOM 加载后，副效应函数也会执行。
-  * useContext() 共享状态钩子，如果需要在组件之间共享状态，可以使用useContext()
+  - 挂载卸载过程
+    - constructor()
+    - componentWillMount()
+    - componentDidMount()
+    - componentWillUnmount()
+  - 更新过程
+    - componentWillReceiveProps(nextProps)
+    - shouldComponentUpdate(nextProps, nextState)
+    - componentWillUpdate(nextProps, nextState)
+    - componentDidUpdate(prevProps, prevState)
+    - render()
 
-* 一个页面有多个state，太混乱，你要怎么整合
+- React 的 hooks 有了解么，请说下 useState, useCallback 的作用
 
-* Vue的计算属性怎么在React中实现
+  - Hooks 的最大的作用就是可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
+  - useState 的功能就是让你在函数式组件中使用 state
+  - useEffect()的作用就是指定一个副效应函数，组件每渲染一次，该函数就自动执行一次。组件首次在网页 DOM 加载后，副效应函数也会执行。
+  - useContext() 共享状态钩子，如果需要在组件之间共享状态，可以使用 useContext()
 
-* React的memo的用法
+- 一个页面有多个 state，太混乱，你要怎么整合
 
-* 一个仓库有个多端的项目，你要怎么进行区分编译
+- Vue 的计算属性怎么在 React 中实现
 
+- React 的 memo 的用法
+
+- 一个仓库有个多端的项目，你要怎么进行区分编译

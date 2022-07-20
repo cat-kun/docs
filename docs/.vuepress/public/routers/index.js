@@ -46,7 +46,7 @@ module.exports = {
       text: '青龙',
       collapsible: true,
       children: [
-        '/reference/qinglong/README.md', 
+        '/reference/qinglong/README.md',
         '/reference/qinglong/Nark.md',
         '/reference/qinglong/kingfeng.md',
       ],
@@ -54,7 +54,7 @@ module.exports = {
     {
       text: '面经',
       collapsible: true,
-      children: ['/reference/interview/README.md']
+      children: ['/reference/interview/README.md', '/reference/interview/Jianli.md', '/reference/interview/Base.md']
     },
     {
       text: '路由器',
