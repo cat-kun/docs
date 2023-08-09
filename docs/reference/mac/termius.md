@@ -11,5 +11,4 @@ echo 'syntax on' >> ~/.vimrc
 
 # 开启行号显示
 echo 'set nu!' >> ~/.vimrc
-``
 ```
