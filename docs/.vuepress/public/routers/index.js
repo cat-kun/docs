@@ -1,46 +1,4 @@
-// const rm = {
-//   qinglong: {
-//     title: "青龙",
-//     base: "/qinglong",
-//   },
-//   nark: {
-//     title: "青龙",
-//     base: "/nark",
-//   },
-// };
-
-// module.exports = [
-//   {
-//     text: rm.qinglong.title,
-//     collapsible: true,
-//     children: [
-//       {
-//         text: "青龙部署",
-//         link: `${rm.qinglong.base}/`,
-//       },
-//       {
-//         text: "Nark",
-//         link: `${rm.qinglong.base}/Nark.md`,
-//       },
-//       {
-//         text: "KingFeng",
-//         link: `${rm.qinglong.base}/kingfeng`,
-//       },
-//     ],
-//   },
-//   {
-//     text: rm.nark.title,
-//     collapsible: true,
-//     children: [
-//       {
-//         text: "青龙部署",
-//         link: `${rm.nark.base}/`,
-//       },
-//     ],
-//   },
-// ];
-
-module.exports = {
+export default {
   '/reference/': [
     {
       text: '青龙',
@@ -65,6 +23,11 @@ module.exports = {
       text: '科学上网',
       collapsible: true,
       children: ['/reference/vpn/ios.md', '/reference/vpn/android.md', '/reference/vpn/windows.md', '/reference/vpn/Mac.md']
+    },
+    {
+      text: 'Mac',
+      collapsible: true,
+      children: ['/reference/mac/termius.md']
     },
   ],
 }
