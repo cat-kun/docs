@@ -1,14 +1,23 @@
 # IOS 设备（iphone、ipad）
 
-- 以下软件选其一即可（需要非中国区苹果 id 才能下载，最好是美区 id，不懂自行百度）
-  - 没有非中国区 id，网上找共享 apple id 共享号，或者自己注册，然后到 App Store 登录，（不是退出设置的 Apple ID）
-    - 打开 App Store 右上角头像，拉到最底下，退出登录，即可换 Apple ID 登录
+### 注意事项
 
-## Shadowrocket ==常用==
+- 以下软件选其一即可（需要非中国区苹果 id 才能下载，最好是美区 id，不懂自行百度）
+- 没有非中国区 id，网上找共享 apple id 共享号，或者自己注册（自行搜索教程），然后到 App Store（应用商店）登录，（不是退出设置的 Apple ID！）
+
+  - 打开 App Store（应用商店）右上角头像，拉到最底下，退出登录，即可换 Apple ID 登录
+
+  ::: details 点击查看详情
+  ![打开App Store（应用商店）](./images/appstore01.jpg)
+  ![退出Apple id](./images/appstore02.jpg)
+  ![重新登录](./images/appstore03.jpg)
+  :::
+
+## Shadowrocket（常用）
 
 - [App Store 下载](https://apps.apple.com/us/app/shadowrocket/id932747118)
 
-::: details 使用方法
+::: details 点击查看使用方法
 以下教程将提供 Shadowrocket 最基础的使用方法。
 
 <b>请注意，教程编写时最新版本为 2.2.4，后续版本界面可能会与图片所示内容有所差异，请以最新版本为准</b>
