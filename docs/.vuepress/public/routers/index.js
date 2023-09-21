@@ -22,7 +22,7 @@ export default {
     {
       text: '科学上网',
       collapsible: true,
-      children: ['/reference/vpn/ios.md', '/reference/vpn/android.md', '/reference/vpn/windows.md', '/reference/vpn/Mac.md']
+      children: ['/reference/vpn/ios.md', '/reference/vpn/android.md', '/reference/vpn/windows.md', '/reference/vpn/Mac.md', '/reference/vpn/flow.md']
     },
     {
       text: 'Mac',
