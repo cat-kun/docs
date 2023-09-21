@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3e224a42","path":"/reference/vpn/Mac.html","title":"Mac 设备","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"ClashX","slug":"clashx","link":"#clashx","children":[]}],"git":{"updatedTime":1693202063000},"filePathRelative":"reference/vpn/Mac.md"}');export{e as data};
