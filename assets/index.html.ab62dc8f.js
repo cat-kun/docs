@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as n,b as e,d as c}from"./app.dcecfe39.js";const o={},r=e("h1",{id:"科学上网-vpn",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#科学上网-vpn","aria-hidden":"true"},"#"),c(" 科学上网（VPN）")],-1),s=[r];function d(_,i){return a(),n("div",null,s)}const l=t(o,[["render",d],["__file","index.html.vue"]]);export{l as default};

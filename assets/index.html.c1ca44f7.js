@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-76b9ed90","path":"/reference/vpn/","title":"科学上网（VPN）","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1670230303000},"filePathRelative":"reference/vpn/README.md"}');export{e as data};
